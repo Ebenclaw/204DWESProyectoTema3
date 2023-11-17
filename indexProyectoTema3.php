@@ -156,6 +156,7 @@
                 <td>27. Encuesta individual de valoracion</td>
                 <td><a href="codigoPHP/ejercicio27.php"><img src="webroot/image/play.png" alt="play"/></a></td>
                 <td><a href="mostrarcodigo/muestraEjercicio27.php"><img src="webroot/image/ojo.png" alt="ojo"/></a></td>
+                
             </tr>
         </table>
     </main>
