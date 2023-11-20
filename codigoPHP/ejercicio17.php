@@ -19,13 +19,13 @@
         <?php
             /*
              * @author Rebeca Sánchez Pérez
-             * @version 1.1
-             * @since 18/10/2023
+             * @version 1.2
+             * @since 06/11/2023
              */
 
             // DECLARACION E INICIALIZACION DE VARIABLES
             // Se declara un array bidimensional para representar el teatro
-            $aTeatro[][];
+            $aTeatro = [];
             // La variable $filas almacena el numero de filas que tiene la matriz
             $filas = 20;
             // La variable $asientos almacena el numero de columnas que tiene la matriz
@@ -38,31 +38,42 @@
             $aTeatro[18][10] = "Carlos";
             
             // Se recorre el array con foreach() para mostrar los asientos ocupados
-            echo('Asientos ocupados (foreach()):<br>');
-            foreach ($aTeatro as $filas => $asientos) {
+            echo('<div class="ejercicio">');
+            echo('<h3>Foreach():</h3>');
+            foreach ($aTeatro as $fila => $asientos) {
                 foreach ($asientos as $asiento => $persona) {
-                    echo('Fila '.$filas.', Asiento '.$asiento.': '.$persona.'<br>');
+                    echo('Fila <u>'. $fila.'</u>, Asiento <u>'. $asiento.'</u>: <b>'. $persona.'</b><br>');
                 }
             }
+            echo('</div>');
             
             // Se recorre el array con while() para mostrar los asientos ocupados
-            echo('<br>Asientos ocupados (while()):<br>');
-            reset($aTeatro);
-            while (list($fila, $asientos) = each($aTeatro)) {
-                while (list($asiento, $persona) = each($asientos)) {
-                    echo('Fila $fila, Asiento '.$asiento.': '.$persona.'<br>');
-                }
-            }
+//            echo('<div class="ejercicio">');
+//            echo('<h3>While():</h3>');
+//            $fila=0;
+//            $asiento=0;
+//            while ($fila <= $filas) {
+//                while ($asiento <= $asientos) {
+//                    if(isset($aTeatro[$fila][$asiento])){
+//                        echo('Fila <u>'. $fila.'</u>, Asiento <u>'. $asiento.'</u>: <b>'. $aTeatro[$fila][$asiento].'</b><br>');
+//                    }
+//                    $asiento++; 
+//                }
+//                $fila++;
+//            }
+//            echo('</div>');
 
-            // Recorrer el array con for() para mostrar los asientos ocupados
-            echo('<br>Asientos ocupados (for()):<br>');
-            for ($fila = 1; $fila <= $filas; $fila++) {
-                for ($asiento = 1; $asiento <= $asientos_por_fila; $asiento++) {
+            // Se recorre el array con for() para mostrar los asientos ocupados
+            echo('<div class="ejercicio">');
+            echo('<h3>For():</h3>');
+            for ($fila = 1; $fila <= 20; $fila++) {
+                for ($asiento = 1; $asiento <= 15; $asiento++) {
                     if (isset($aTeatro[$fila][$asiento])) {
-                        echo('Fila '.$fila.', Asiento '.$asiento.': '.$aTeatro[$fila][$asiento].'<br>');
+                        echo('Fila <u>'. $fila.'</u>, Asiento <u>'. $asiento.'</u>: <b>' . $aTeatro[$fila][$asiento] . '</b><br>');
                     }
                 }
             }
+            echo('</div>');
         ?>
     </main>
     <footer>

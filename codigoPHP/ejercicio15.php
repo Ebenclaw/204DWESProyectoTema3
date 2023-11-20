@@ -23,7 +23,6 @@
              * @version 1.2
              * @since 23/10/2023
              */
-            // PREGUNTAR SI LO DEL DO WHILE Y EL WHILE VA EN EL EJERCICIO 16 EN VEZ DE EN ESTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
             // DECLARACION E INICIALIZACION DE VARIABLES
             // El array asociativo $aSueldos almacena los sueldos de cada dia de la semana
