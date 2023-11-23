@@ -89,8 +89,8 @@
             </tr>
             <tr>
                 <td>14. Comprobar las librerías que estás utilizando en tu entorno de desarrollo y explotación. Crear tu propia librería de funciones y estudiar la forma de usarla en el entorno de desarrollo y en el de explotación</td>
-                <td></td>
-                <td></td>
+                <td><a href="codigoPHP/ejercicio14.php"><img src="webroot/image/play.png" alt="play"/></a></td>
+                <td><a href="mostrarcodigo/muestraEjercicio14.php"><img src="webroot/image/ojo.png" alt="ojo"/></a></td>
             </tr>
             <tr>
                 <td>15. Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana</td>
@@ -156,6 +156,7 @@
                 <td>27. Encuesta individual de valoracion</td>
                 <td><a href="codigoPHP/ejercicio27.php"><img src="webroot/image/play.png" alt="play"/></a></td>
                 <td><a href="mostrarcodigo/muestraEjercicio27.php"><img src="webroot/image/ojo.png" alt="ojo"/></a></td>
+                
             </tr>
         </table>
     </main>

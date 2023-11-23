@@ -23,7 +23,6 @@
              * @since 17/10/2023
              */
         
-            // DECLARACION E INICIALIZACION DE VARIABLES
             
         ?>
     </main>

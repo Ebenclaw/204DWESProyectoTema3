@@ -19,8 +19,8 @@
             <?php
             /**
              * @author Rebeca Sánchez Pérez
-             * @version 1.0
-             * @since 16/11/2023
+             * @version 1.1
+             * @since 20/11/2023
              */
             
             // DECLARACION E INICIALIZACION DE VARIABLES
@@ -67,11 +67,44 @@
             define("TAM_MAX_TEXTO", 255);
             define("TAM_MIN_TEXTO", 1);
             
+            // Se crea una funcion a la que si se le pasa un numero del 1 al 12, devuelve el mes del año en español
+            function obtenerMes($mes){
+                $aMeses = [
+                1 => "enero",
+                2 => "febrero",
+                3 => "marzo",
+                4 => "abril",  
+                5 => "mayo",
+                6 => "junio",
+                7 => "julio",
+                8 => "agosto",
+                9 => "septiembre",
+                10 => "octubre",
+                11 => "noviembre",
+                12 => "diciembre"    
+            ];
+                return $aMeses[$mes];
+            }
+            
+            // Se crea una funcion a la que si se le pasa un numero del 1 al 7, devuelve el dia de la semana en español
+                function obtenerDiaSemana($dia){
+                $aDiasSemana = [
+                1 => "lunes",
+                2 => "martes",
+                3 => "miercoles",
+                4 => "jueves",  
+                5 => "viernes",
+                6 => "sabado",
+                7 => "domingo"   
+            ];
+                return $aDiasSemana[$dia];
+            }
+            
             // Se instancia un objeto que almacena la fecha y hora actual de la region de Europe/Madrid
             $oFecha = new DateTime('now', new DateTimeZone('Europe/Madrid'));
-
-            // Declaración de un array para que almacene las EXTENSIONES por defecto de la función validarNombreArchivo
-            $aExtensiones = ['txt', 'json'];
+            
+            // Se instancia un objeto DateTime que almacena la fecha actual
+            $oFechaActual = new DateTime();
 
             // La varible $entradaOK es un interruptor que recibe el valor true cuando no existe ningun error en la entrada
             $entradaOK = true;
@@ -143,13 +176,22 @@
                     'textAreaObligatorio' => $_REQUEST['textAreaObligatorio']
                 ];
                 
-                // Se muestran por pantalla los valores del formulario   
-                
-                $anyoDeEdad = date('d-m-Y', strtotime($aRespuestas['fechaObligatorio']."-"));
+                // Se obtiene el numero del mes de la fecha actual
+                $mes = $oFechaActual->format("n");
+                // Se obtiene el numero del dia de la semana de la fecha actual
+                $diaSemana = $oFechaActual->format("w");
+                // Se llama a la funcion obtenerMes() y se acumula su valor en $nombreMes
+                $nombreMes = obtenerMes($mes);
+                // Se llama a la funcion obtenerDiaSemana() y se acumula su valor en $nombreDiaSemana
+                $nombreDiaSemana = obtenerDiaSemana($diaSemana);
+                // Se instancia un objeto DateTime que almacena la fecha de nacimiento insertada en el formulario
+                $oFechaNac = new DateTime($aRespuestas['fechaObligatorio']);
+                // Se calcula la diferencia entre la fecha actual y la fecha de nacimiento
+                $oAnyos = $oFechaActual->diff($oFechaNac);
                 
                 echo('<div class="ejercicio">');
-                echo('Hoy ... a las <b>'.$oFecha->format('H:i').'</b>.<br>');
-                echo('D. <b>'.$aRespuestas['alfabeticoObligatorio'].'</b> nacido hace <b>'.$aRespuestas['fechaObligatorio'].'</b> años se siente <b>'.$aRespuestas['radioButtonObligatorio'].'</b>.<br>');
+                echo('Hoy <b>'.$nombreDiaSemana.' '.$oFechaActual->format('d').' de '.$nombreMes.' del '.$oFechaActual->format('Y').'</b> a las <b>'.$oFechaActual->format('H:i').'</b>.<br>');
+                echo('D. <b>'.$aRespuestas['alfabeticoObligatorio'].'</b> nacido hace <b>'.$oAnyos->y.'</b> años se siente <b>'.$aRespuestas['radioButtonObligatorio'].'</b>.<br>');
                 echo('Valora su curso actual con <b>'.$aRespuestas['enteroObligatorio'].'</b> sobre 10.<br>');
                 echo('Estas navidades las dedicará a <b>'.$aRespuestas['listaObligatorio'].'</b><br>');
                 echo('Y, además, opina que: <br>');
