@@ -78,72 +78,72 @@
             
             // El array $aRespuestas almacena los valores que son introducidos en cada input del formulario
             $aRespuestas = [
-                'alfabeticoObligatorio' => "",
-                'alfabeticoOpcional' => "",
-                'alfanumericoObligatorio' => "",
-                'alfanumericoOpcional' => "",
-                'enteroObligatorio' => "",
-                'enteroOpcional' => "",
-                'floatObligatorio' => "",
-                'floatOpcional' => "",
-                'correoObligatorio' => "",
-                'correoOpcional' => "",
-                'urlObligatorio' => "",
-                'urlOpcional' => "",
-                'fechaObligatorio' => "",
-                'fechaOpcional' => "",
-                'dniObligatorio' => "",
-                'dniOpcional' => "",
-                'cpObligatorio' => "",
-                'cpOpcional' => "",
-                'passwordObligatorio' => "",
-                'passwordOpcional' => "",
-                'telefonoObligatorio' => "",
-                'telefonoOpcional' => "",
-                'fileObligatorio' => "",
-                'fileOpcional' => "",
-                'colorOpcional' => "",
-                'rangeOpcional' => "",
-                'listaObligatorio' => "",
-                'radioButtonObligatorio' => "",
-                'checkBoxObligatorio' => "",
-                'textAreaObligatorio' => "",
-                'textAreaOpcional' => ""
+                'alfabeticoObligatorio' => '',
+                'alfabeticoOpcional' => '',
+                'alfanumericoObligatorio' => '',
+                'alfanumericoOpcional' => '',
+                'enteroObligatorio' => '',
+                'enteroOpcional' => '',
+                'floatObligatorio' => '',
+                'floatOpcional' => '',
+                'correoObligatorio' => '',
+                'correoOpcional' => '',
+                'urlObligatorio' => '',
+                'urlOpcional' => '',
+                'fechaObligatorio' => '',
+                'fechaOpcional' => '',
+                'dniObligatorio' => '',
+                'dniOpcional' => '',
+                'cpObligatorio' => '',
+                'cpOpcional' => '',
+                'passwordObligatorio' => '',
+                'passwordOpcional' => '',
+                'telefonoObligatorio' => '',
+                'telefonoOpcional' => '',
+                'fileObligatorio' => '',
+                'fileOpcional' => '',
+                'colorOpcional' => '',
+                'rangeOpcional' => '',
+                'listaObligatorio' => '',
+                'radioButtonObligatorio' => '',
+                'checkBoxObligatorio' => '',
+                'textAreaObligatorio' => '',
+                'textAreaOpcional' => ''
             ];
 
             // El array $aErrores almacena los valores que no cumplan los requisitos que se hayan introducido en el formulario
             $aErrores = [
-                'alfabeticoObligatorio' => "",
-                'alfabeticoOpcional' => "",
-                'alfanumericoObligatorio' => "",
-                'alfanumericoOpcional' => "",
-                'enteroObligatorio' => "",
-                'enteroOpcional' => "",
-                'floatObligatorio' => "",
-                'floatOpcional' => "",
-                'correoObligatorio' => "",
-                'correoOpcional' => "",
-                'urlObligatorio' => "",
-                'urlOpcional' => "",
-                'fechaObligatorio' => "",
-                'fechaOpcional' => "",
-                'dniObligatorio' => "",
-                'dniOpcional' => "",
-                'cpObligatorio' => "",
-                'cpOpcional' => "",
-                'passwordObligatorio' => "",
-                'passwordOpcional' => "",
-                'telefonoObligatorio' => "",
-                'telefonoOpcional' => "",
-                'fileObligatorio' => "",
-                'fileOpcional' => "",
-                'colorOpcional' => "",
-                'rangeOpcional' => "",
-                'listaObligatorio' => "",
-                'radioButtonObligatorio' => "",
-                'checkBoxObligatorio' => "",
-                'textAreaObligatorio' => "",
-                'textAreaOpcional' => ""
+                'alfabeticoObligatorio' => '',
+                'alfabeticoOpcional' => '',
+                'alfanumericoObligatorio' => '',
+                'alfanumericoOpcional' => '',
+                'enteroObligatorio' => '',
+                'enteroOpcional' => '',
+                'floatObligatorio' => '',
+                'floatOpcional' => '',
+                'correoObligatorio' => '',
+                'correoOpcional' => '',
+                'urlObligatorio' => '',
+                'urlOpcional' => '',
+                'fechaObligatorio' => '',
+                'fechaOpcional' => '',
+                'dniObligatorio' => '',
+                'dniOpcional' => '',
+                'cpObligatorio' => '',
+                'cpOpcional' => '',
+                'passwordObligatorio' => '',
+                'passwordOpcional' => '',
+                'telefonoObligatorio' => '',
+                'telefonoOpcional' => '',
+                'fileObligatorio' => '',
+                'fileOpcional' => '',
+                'colorOpcional' => '',
+                'rangeOpcional' => '',
+                'listaObligatorio' => '',
+                'radioButtonObligatorio' => '',
+                'checkBoxObligatorio' => '',
+                'textAreaObligatorio' => '',
+                'textAreaOpcional' => ''
             ];
             
             // Si el fromulario ha sido rellenado, se valida la entrada
@@ -198,7 +198,7 @@
                 foreach ($aErrores as $campo => $error) {
                     // Si existe algun error se cambia el valor de $entradaOK a false y se limpia ese campo
                     if ($error != null) {
-                        $_REQUEST[$campo] = "";
+                        $_REQUEST[$campo] = '';
                         $entradaOK = false;
                     }
                 }
@@ -252,7 +252,7 @@
                     if ($campo == 'checkBoxObligatorio') {
                         echo "<p class='d-flex justify-content-start'>" . strtoupper($campo) . " : [</p>";
                         foreach ($_REQUEST['checkBoxObligatorio'] as $campo => $respuesta) {
-                            echo "<p>" . $campo . " => " . $respuesta . "</p>";
+                            echo "<p>" . $campo . " = " . $respuesta . "</p>";
                         }
                         echo "]";
                     } else {
